@@ -1,6 +1,12 @@
 dnf update -y
-dnf install -y gnome-tweaks vim zsh tilix tmux snapd fira-code-fonts util-linux-user autojump-zsh
+dnf install -y gnome-tweaks vim zsh tilix tmux snapd fira-code-fonts util-linux-user autojump-zsh fedora-workstation-repositories
+dnf config-manager --set-enabled google-chrome
+dnf install -y google-chrome
 ln -s /var/lib/snapd/snap /snap
+
+git config --global user.name "mleader"
+git config --global user.email "mleader@redhat.com"
+
 
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
