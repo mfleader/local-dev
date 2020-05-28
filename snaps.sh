@@ -1,3 +1,3 @@
 
-snap install vlc
-snap install --classic code-insiders slack
+snap install --classic code slack atom
+snap install bitwarden vlc
