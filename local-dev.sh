@@ -1,5 +1,5 @@
 dnf update -y
-dnf install -y gnome-tweaks vim zsh tilix tmux snapd fira-code-fonts util-linux-user autojump-zsh fedora-workstation-repositories
+dnf install -y gnome-tweaks vim zsh tilix tmux snapd fira-code-fonts util-linux-user autojump-zsh fedora-workstation-repositories hub
 dnf config-manager --set-enabled google-chrome
 dnf install -y google-chrome
 ln -s /var/lib/snapd/snap /snap
