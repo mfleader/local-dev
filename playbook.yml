@@ -16,7 +16,7 @@
         scope: global
         value: myuser
 
-    - name: autoremove unndeed packages installed as dependencies
+    - name: autoremove unneeded packages installed as dependencies
       dnf:
         autoremove: yes
     
