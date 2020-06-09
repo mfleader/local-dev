@@ -1,0 +1,22 @@
+- hosts: dev
+    tasks:
+    - name: update and upgrade packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: add python build dependencies
+      dnf:
+        name: make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel
+        state: latest
+
+    - name: set git config
+      git_config:
+        name: user.name
+        scope: global
+        value: myuser
+
+    - name: autoremove unndeed packages installed as dependencies
+      dnf:
+        autoremove: yes
+    
