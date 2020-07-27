@@ -9,7 +9,7 @@ git config --global user.email "mleader@redhat.com"
 
 
 # install python build dependencies
-dnf install -y make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel
+dnf install -y make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel python3-devel
 
 
 
@@ -34,3 +34,14 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshenv
  
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+
+
+# get julia latest stable binary 
+# https://julialang.org/downloads/platform/#linux_and_freebsd
+
+# gpg https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.2-linux-x86_64.tar.gz.asc
+# regular https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.2-linux-x86_64.tar.gz
+
+mkdir $HOME/.local/jl
+tar -xvzf julia-x.y.z-linux_x86_64.tar.gz -C $HOME/.local/jl
+ln --symbolic $HOME/.local/jl/julia-x.y.z-linux_x86_64/bin/julia $HOME/.local/bin/julia
